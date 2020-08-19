@@ -9,9 +9,17 @@ app.use(express.json());
 
 const projectsTest = [];
 
-app.get("/test", (req, res) => {
+app.get("/test/:title?", (req, res) => {
   console.log(`${req.method}: localhost:${port}/test`);
-  return res.json({ projectsTest });
+
+  const { title } = req.query;
+
+  const projects =
+    title && title != ""
+      ? projectsTest.filter((proj) => proj.title.includes(title))
+      : projectsTest;
+
+  return res.json({ projects });
 });
 
 app.post("/test", (req, res) => {
@@ -54,7 +62,7 @@ app.delete("/test/:id", (req, res) => {
     return res.status(400).json({ error: "project not found" });
   }
 
-  projectsTest.slice(projectIndex, 1);
+  projectsTest.splice(projectIndex, 1);
 
   return res.json({
     msg: `deleted: ${req.params.id}`,
