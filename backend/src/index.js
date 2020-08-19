@@ -1,4 +1,5 @@
 const express = require("express");
+const { uuid } = require("uuidv4");
 
 const port = 3333;
 
@@ -6,59 +7,57 @@ const app = express();
 
 app.use(express.json());
 
-/*
-  VERBOS HTTP:
-  
-  GET~> Buscar informações da api;
-  POST~> Criar uma informação na api;
-  PUT/PATCH~> Alterar uma informação na api;
-  DELETE~> Deletar uma informação na api;
-*/
+const projectsTest = [];
 
-/*
-  Uso Geral de Parâmetros:
-  
-  Query~> filtros e paginação, 
-  ex:localhost:3333/teste?teste=teste ;
-  
-  Route~> identificar recursos (atualizar/deletar), 
-  ex:localhost:3333/teste/teste
-  
-  Body~> informações para criar ou editar um recurso (JSON),
-  ex: {"teste":"teste"};
-
-  Header~> autenticar usuário ou passar alguma configuração para a api,
-  ex: "Auth": "87f633634cc4b02f628685651f0a29b7bfa22a0bd841f725c6772dd00a58d489";
-*/
-
-app.get("/test/:name/:lastname?", (req, res) => {
+app.get("/test", (req, res) => {
   console.log(`${req.method}: localhost:${port}/test`);
-  return res.json({
-    msg: `hello world ${req.params.name} ${req.query.lastname}`,
-  });
+  return res.json({ projectsTest });
 });
 
 app.post("/test", (req, res) => {
   console.log(`${req.method}: localhost:${port}/test`);
-  return res.json({ result: { ...req.body, auth: `${req.headers.authtest}` } });
+
+  const { title, owner } = req.body;
+  const project = { id: uuid(), title, owner };
+
+  projectsTest.push(project);
+
+  return res.json({ project });
 });
 
 app.put("/test/:id", (req, res) => {
   console.log(`${req.method}: localhost:${port}/test`);
-  return res.json({
-    result: {
-      ...req.body,
-      id: req.params.id,
-      auth: `${req.headers.authtest}`,
-    },
-  });
+
+  const { id } = req.params;
+  const { title, owner } = req.body;
+
+  const projectIndex = projectsTest.findIndex((proj) => proj.id == id);
+
+  if (projectIndex < 0) {
+    return res.status(400).json({ error: "project not found" });
+  }
+
+  const project = { id, title, owner };
+  projectsTest[projectIndex] = project;
+
+  return res.json({ project });
 });
 
 app.delete("/test/:id", (req, res) => {
   console.log(`${req.method}: localhost:${port}/test`);
+
+  const { id } = req.params;
+
+  const projectIndex = projectsTest.findIndex((proj) => proj.id == id);
+
+  if (projectIndex < 0) {
+    return res.status(400).json({ error: "project not found" });
+  }
+
+  projectsTest.slice(projectIndex, 1);
+
   return res.json({
     msg: `deleted: ${req.params.id}`,
-    auth: `${req.headers.authtest}`,
   });
 });
 
