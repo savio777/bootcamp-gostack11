@@ -1,5 +1,5 @@
 const express = require("express");
-const { uuid } = require("uuidv4");
+const { uuid, isUuid } = require("uuidv4");
 
 const port = 3333;
 
@@ -9,9 +9,37 @@ app.use(express.json());
 
 const projectsTest = [];
 
-app.get("/test/:title?", (req, res) => {
-  console.log(`${req.method}: localhost:${port}/test`);
+function testMiddleware(req, res, next) {
+  const { method, url } = req;
 
+  const log = `${method}~> ${url}`;
+
+  console.log(log);
+
+  // sem isso não passa para as outras rotas
+  return next();
+
+  // sem return tem a possibilidade de executar codigo após executar o endpoint
+  //next();
+  //console.log("after");
+}
+
+function testIdValidation(req, res, next) {
+  const { id } = req.params;
+
+  if (!isUuid(id)) {
+    return res.status(400).json({ error: "id invalid" });
+  }
+
+  return next();
+}
+
+app.use(testMiddleware);
+app.use("/test/:id", testIdValidation);
+
+// pode adicionar quantos middlewares que quiser
+//app.get("/test/:title?", testMiddleware, middleware2, (req, res) => {
+app.get("/test/:title?", (req, res) => {
   const { title } = req.query;
 
   const projects =
@@ -23,8 +51,6 @@ app.get("/test/:title?", (req, res) => {
 });
 
 app.post("/test", (req, res) => {
-  console.log(`${req.method}: localhost:${port}/test`);
-
   const { title, owner } = req.body;
   const project = { id: uuid(), title, owner };
 
@@ -34,8 +60,6 @@ app.post("/test", (req, res) => {
 });
 
 app.put("/test/:id", (req, res) => {
-  console.log(`${req.method}: localhost:${port}/test`);
-
   const { id } = req.params;
   const { title, owner } = req.body;
 
@@ -52,8 +76,6 @@ app.put("/test/:id", (req, res) => {
 });
 
 app.delete("/test/:id", (req, res) => {
-  console.log(`${req.method}: localhost:${port}/test`);
-
   const { id } = req.params;
 
   const projectIndex = projectsTest.findIndex((proj) => proj.id == id);
