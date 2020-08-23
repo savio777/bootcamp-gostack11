@@ -90,10 +90,23 @@
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("var soma10 = function soma10(valor) {\n  return valor + 10;\n};\n\nconsole.log(soma10(10));\n\n//# sourceURL=webpack:///./src/index.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _soma__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./soma */ \"./src/soma.js\");\n\nconsole.log(Object(_soma__WEBPACK_IMPORTED_MODULE_0__[\"soma10\"])(10));\n\n//# sourceURL=webpack:///./src/index.js?");
+
+/***/ }),
+
+/***/ "./src/soma.js":
+/*!*********************!*\
+  !*** ./src/soma.js ***!
+  \*********************/
+/*! exports provided: soma10 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"soma10\", function() { return soma10; });\nvar soma10 = function soma10(valor) {\n  return valor + 10;\n};\n\n//# sourceURL=webpack:///./src/soma.js?");
 
 /***/ })
 

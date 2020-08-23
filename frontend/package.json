@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "babel": "babel ./src/index.js --out-file ./public/bundle.js",
-    "webpack": "webpack --mode development"
+    "webpack": "webpack --mode development",
+    "webpackdev": "webpack-dev-server --mode development"
   },
   "keywords": [
     "react",
@@ -25,5 +26,8 @@
     "react-dom": "^16.13.1",
     "webpack": "^4.44.1",
     "webpack-cli": "^3.3.12"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^3.11.0"
   }
 }

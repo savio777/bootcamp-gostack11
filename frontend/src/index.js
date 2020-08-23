@@ -1,3 +1,3 @@
-const soma10 = (valor) => valor + 10;
+import { soma20 } from "./soma";
 
-console.log(soma10(10));
+console.log(soma20(5));
