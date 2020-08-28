@@ -7,22 +7,24 @@ function App() {
   const [projects, setProjects] = useState([]);
 
   useEffect(() => {
-    /*async function getRepositories() {
+    async function getRepositories() {
       const response = await api.get("/test");
 
       if (response.status == 200) {
         setProjects(response.data.projects);
       }
     }
-    getRepositories();*/
-
-    api.get("/test").then((response) => {
-      setProjects(response.data.projects);
-    });
+    getRepositories();
   }, []);
 
-  function handleAddProject() {
-    setProjects([...projects, `Novo projeto: ${Date.now()}`]);
+  async function handleAddProject() {
+    const body = { title: `Novo projeto: ${Date.now()}`, owner: "savio" };
+
+    const response = await api.post("test", body);
+
+    if (response.status == 200) {
+      setProjects([...projects, body]);
+    }
   }
 
   return (
