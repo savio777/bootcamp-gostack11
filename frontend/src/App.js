@@ -1,10 +1,25 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Header from "./components/Header";
-import background from "./assets/background.jpeg";
 import "./App.css";
+import api from "./services/api";
 
 function App() {
-  const [projects, setProjects] = useState(["dev app", "fontend", "api"]);
+  const [projects, setProjects] = useState([]);
+
+  useEffect(() => {
+    /*async function getRepositories() {
+      const response = await api.get("/test");
+
+      if (response.status == 200) {
+        setProjects(response.data.projects);
+      }
+    }
+    getRepositories();*/
+
+    api.get("/test").then((response) => {
+      setProjects(response.data.projects);
+    });
+  }, []);
 
   function handleAddProject() {
     setProjects([...projects, `Novo projeto: ${Date.now()}`]);
@@ -20,11 +35,9 @@ function App() {
         </ul>
       </Header>
 
-      <img src={background} style={{ width: 300 }} />
-
       <ul>
-        {projects.map((value, index) => (
-          <li key={`${index}`}>{value}</li>
+        {projects.map((value) => (
+          <li key={value.id}>{value.title}</li>
         ))}
       </ul>
       <button type="button" onClick={() => handleAddProject()}>
