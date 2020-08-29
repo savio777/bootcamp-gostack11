@@ -1,5 +1,11 @@
 import React, {useState, useEffect} from 'react';
-import {Text, View, StyleSheet, ScrollView} from 'react-native';
+import {
+  Text,
+  TouchableOpacity,
+  View,
+  StyleSheet,
+  ScrollView,
+} from 'react-native';
 import api from './services/api';
 
 function App() {
@@ -16,7 +22,11 @@ function App() {
   }, []);
 
   async function handleAddProject() {
-    const body = {title: `Novo projeto: ${Date.now()}`, owner: 'savio'};
+    const body = {
+      id: `${Date.now()}`,
+      title: `Novo projeto: ${Date.now()}`,
+      owner: 'savio',
+    };
 
     const response = await api.post('test', body);
 
@@ -45,10 +55,19 @@ function App() {
           <View style={styles.containerProjects}>
             {projects.length > 0 &&
               projects.map((project) => (
-                <Text key={project.id}>{project.title}</Text>
+                <Text key={project.id} style={styles.text}>
+                  {project.title}
+                </Text>
               ))}
           </View>
         </ScrollView>
+        <View style={{paddingHorizontal: 10}}>
+          <TouchableOpacity
+            style={styles.button}
+            onPress={() => handleAddProject()}>
+            <Text style={styles.textButton}>Adicionar Projeto</Text>
+          </TouchableOpacity>
+        </View>
       </View>
     </>
   );
@@ -59,6 +78,7 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: '#7159',
   },
+  text: {color: '#fff', fontWeight: 'bold'},
   containerProjects: {
     flex: 1,
     alignItems: 'center',
@@ -66,10 +86,19 @@ const styles = StyleSheet.create({
     height: '100%',
     paddingVertical: 5,
   },
-  title: {
-    color: '#fff',
-    fontSize: 32,
+  button: {
+    borderWidth: 1,
+    borderRadius: 5,
+    backgroundColor: '#fff',
+    height: 40,
+    justifyContent: 'center',
+    marginBottom: 10,
+  },
+  textButton: {
+    color: '#7159',
     fontWeight: 'bold',
+    textAlign: 'center',
+    fontSize: 18,
   },
 });
 
