@@ -1,9 +1,8 @@
 import express from 'express'
+import {hello} from './routes'
 
 const app = express()
 
-app.get('/', (req, res) => {
-  return res.json({ msg: 'hello world' })
-})
+app.get('/', hello)
 
 app.listen(3000, () => { console.log('server init') })
