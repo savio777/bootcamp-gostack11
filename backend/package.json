@@ -8,7 +8,7 @@
     "tsc-init": "tsc --init",
     "build": "tsc",
     "production": "node ./dist/index.js",
-    "dev:server": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules ./src/server.ts",
+    "start:server": "ts-node --inspect --transpile-only --ignore-watch node_modules ./src/server.ts",
     "start": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules ./src/server.ts",
     "eslint-start": "eslint --init",
     "create:migration": "ts-node-dev ./node_modules/typeorm/cli.js migration:create -n",

@@ -1,4 +1,3 @@
-/* eslint-disable class-methods-use-this */
 import { MigrationInterface, QueryRunner, Table } from 'typeorm';
 
 export default class CreateAppointment1599281324180
@@ -13,7 +12,7 @@ export default class CreateAppointment1599281324180
             type: 'varchar',
             isPrimary: true,
             generationStrategy: 'uuid',
-            // default: 'uuid_generate_v4()',
+            default: 'uuid_generate_v4()',
           },
           { name: 'provider', type: 'varchar', isNullable: false },
           {
