@@ -10,7 +10,12 @@
     "production": "node ./dist/index.js",
     "dev:server": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules ./src/server.ts",
     "start": "ts-node-dev --inspect --transpile-only --ignore-watch node_modules ./src/server.ts",
-    "eslint-start": "eslint --init"
+    "eslint-start": "eslint --init",
+    "create:migration": "ts-node-dev ./node_modules/typeorm/cli.js migration:create -n",
+    "migration:run": "ts-node-dev ./node_modules/typeorm/cli.js migration:run",
+    "migration:show": "ts-node-dev ./node_modules/typeorm/cli.js migration:show",
+    "migration:revert": "ts-node-dev ./node_modules/typeorm/cli.js migration:revert",
+    "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js"
   },
   "keywords": [
     "nodejs",
@@ -23,6 +28,9 @@
   "dependencies": {
     "date-fns": "^2.16.1",
     "express": "^4.17.1",
+    "pg": "^8.3.3",
+    "reflect-metadata": "^0.1.13",
+    "typeorm": "^0.2.25",
     "uuidv4": "^6.2.3"
   },
   "devDependencies": {
