@@ -3,7 +3,7 @@
 ## Summary:
 
 1. [Passos](#passos)
-2. [Comandos úteis](#comandos-uteis)
+2. [Comandos úteis](#comandos-úteis)
 
 ### Passos:
 
