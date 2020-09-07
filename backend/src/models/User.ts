@@ -17,6 +17,7 @@ class User {
   @Column()
   email: string;
 
+  // ? para poder deletar essa propriedade do user antes de retornar o user no endpoint
   @Column()
   password?: string;
 
