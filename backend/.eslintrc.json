@@ -20,7 +20,11 @@
   },
   "plugins": ["@typescript-eslint", "prettier"],
   "rules": {
-    "eslint-disable class-methods-use-this": true,
+    "camelcase": "off",
+    "@typescript-eslint/no-unused-vars": "off",
+    "no-console": "off",
+    "no-underscore-dangle": "off",
+    "class-methods-use-this": "off",
     "prettier/prettier": "error",
     "import/extensions": [
       "error",
