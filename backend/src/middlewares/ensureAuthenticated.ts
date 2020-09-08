@@ -20,8 +20,6 @@ export default function ensureAuthenticated(
     throw new Error('Token is missing');
   }
 
-  console.log('auth ', authHeader);
-
   // [type = 'Baerer', token = 'hash']
   const [, token] = authHeader.split(' ');
 
