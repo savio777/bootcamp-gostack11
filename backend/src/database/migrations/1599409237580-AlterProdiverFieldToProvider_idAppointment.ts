@@ -9,7 +9,7 @@ import {
 // onDelete SET NULL~> caso o usuário seja deletado, o id vai ser colocado como null em todas as relações
 // onUpdate CASCADE~> caso o usuario seja atualizado, vai ser atualizado em todas as relações
 
-export class AlterProdiverFieldToProviderIdAppointment1599409237580
+export default class AlterProdiverFieldToProviderIdAppointment1599409237580
   implements MigrationInterface {
   public async up(queryRunner: QueryRunner): Promise<void> {
     await queryRunner.dropColumn('appointments', 'provider');

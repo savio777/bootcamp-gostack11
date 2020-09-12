@@ -25,7 +25,7 @@ class Appointment {
   @Column()
   provider_id: string;
 
-  // fazendo ligação do provider com user
+  // fazendo ligação com user
   @ManyToOne(() => User)
   @JoinColumn({ name: 'provider_id' })
   provider: User;
