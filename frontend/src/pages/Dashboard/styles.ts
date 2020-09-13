@@ -60,7 +60,8 @@ export const Repositories = styled.div`
     align-items: center;
     transition: transform 0.2s;
 
-    + a { /* ou & + a */
+    + a {
+      /* ou & + a */
       margin-top: 16px;
     }
 
@@ -75,7 +76,8 @@ export const Repositories = styled.div`
     }
 
     div {
-      margin-left: 16px;
+      margin: 0 16px;
+      flex: 1;
 
       strong {
         font-size: 20px;
