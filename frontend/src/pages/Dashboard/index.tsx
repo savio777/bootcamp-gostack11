@@ -1,4 +1,4 @@
-import React, { useState, FormEvent } from "react";
+import React, { useState, useEffect, FormEvent } from "react";
 import { FiChevronRight } from "react-icons/fi";
 
 import api from "../../services/api";
@@ -17,6 +17,38 @@ const Dashboard: React.FC = () => {
   const [newRepo, setNewRepo] = useState("");
   const [inputError, setInputError] = useState("");
   const [repositories, setRepositories] = useState<Repository[]>([]);
+
+  // maneira de passar valores sem o useEffect
+  /*
+  const [repositories, setRepositories] = useState<Repository[]>(() => {
+    const repositoriesSaved = localStorage.getItem(
+      "@GithubExplorer:repositories"
+    );
+
+    if (repositoriesSaved) {
+      return JSON.parse(repositoriesSaved);
+    }
+
+    return [];
+  });
+  */
+
+  useEffect(() => {
+    const repositoriesSaved = localStorage.getItem(
+      "@GithubExplorer:repositories"
+    );
+
+    if (repositoriesSaved) {
+      setRepositories(JSON.parse(repositoriesSaved));
+    }
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem(
+      "@GithubExplorer:repositories",
+      JSON.stringify(repositories)
+    );
+  }, [repositories]);
 
   async function getRepositories(
     event: FormEvent<HTMLFormElement>
