@@ -7,17 +7,3 @@
 - [ ] Nível 03
 
 [Futuro repositório que guardará todos os desafios📂](https://github.com/savio777/desafios-gostack11)
-
-
-## Aplicação criada nesta fase
-
-
-### ![githubexplorer](https://user-images.githubusercontent.com/35678887/93022281-e737b300-f5be-11ea-83e9-18e68bc010a0.png)
-
-
-#### Dashboard
-![tela1](https://user-images.githubusercontent.com/35678887/93022202-5660d780-f5be-11ea-8408-61b5a9fd8c84.png)
-
-
-#### Detalhes do Repositório
-![print2](https://user-images.githubusercontent.com/35678887/93165420-65e13d00-f6f2-11ea-8b9e-292e7f62bbed.png)
