@@ -5,11 +5,9 @@ import { Container } from './styles';
 // caso não precise adicionar nenhum prop a interface extendida
 type ButtonProps = ButtonHTMLAttributes<HTMLElement>;
 
-const Button: React.FC<ButtonProps> = (props, { children }) => (
-  <Container>
-    <button type="button" {...props}>
-      {children}
-    </button>
+const Button: React.FC<ButtonProps> = ({ children, ...rest }) => (
+  <Container type="button" {...rest}>
+    {children}
   </Container>
 );
 

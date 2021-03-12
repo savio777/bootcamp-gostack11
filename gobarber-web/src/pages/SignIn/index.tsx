@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { FiLogIn } from 'react-icons/fi';
+import { FiLogIn, FiMail, FiLock } from 'react-icons/fi';
 
 import logo from '../../assets/logo.svg';
 
@@ -15,8 +15,8 @@ const SignIn: React.FC = () => (
       <img src={logo} alt="GoBarber" />
       <form>
         <h1>Faça seu login</h1>
-        <Input name="email" type="email" placeholder="Email" />
-        <Input name="pass" type="password" placeholder="Senha" />
+        <Input icon={FiMail} name="email" type="email" placeholder="Email" />
+        <Input icon={FiLock} name="pass" type="password" placeholder="Senha" />
         <Button type="submit">Entrar</Button>
         <a href="forget">Esqueci minha senha</a>
       </form>
