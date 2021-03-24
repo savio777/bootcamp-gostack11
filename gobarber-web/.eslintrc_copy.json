@@ -2,7 +2,7 @@
   "env": {
     "browser": true,
     "es6": true,
-    "es2021": true
+    "jest": true
   },
   "extends": [
     "plugin:react/recommended",
@@ -21,7 +21,7 @@
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
-  "plugins": ["react", "react-hooks", "@typescript-eslint"],
+  "plugins": ["react", "react-hooks", "@typescript-eslint", "prettier"],
   "rules": {
     "prettier/prettier": "error",
     "react/jsx-one-expression-per-line": "off",
@@ -53,5 +53,10 @@
         "tsx": "never"
       }
     ]
+  },
+  "settings": {
+    "import/resolver": {
+      "typescript": {}
+    }
   }
 }
