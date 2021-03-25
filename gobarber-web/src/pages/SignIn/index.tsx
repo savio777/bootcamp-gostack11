@@ -6,7 +6,8 @@ import * as Yup from 'yup';
 import {FiLogIn, FiMail, FiLock} from 'react-icons/fi';
 
 import getValidationErrors from '../../utils/getValidationErrors';
-import {useAuth} from '../../hooks/AuthContext';
+import {useAuth} from '../../hooks/Auth';
+import {useToast} from '../../hooks/Toast';
 
 import logo from '../../assets/logo.svg';
 
@@ -24,6 +25,7 @@ const SignIn: React.FC = () => {
   const formRef = useRef<FormHandles>(null);
 
   const {user, signIn} = useAuth();
+  const {addToast} = useToast();
 
   console.log(user);
 
@@ -41,7 +43,7 @@ const SignIn: React.FC = () => {
 
         await schema.validate(data, {abortEarly: false});
 
-        signIn({email: data.email, password: data.password});
+        await signIn({email: data.email, password: data.password});
       } catch (error) {
         if (error instanceof Yup.ValidationError) {
           const errors = getValidationErrors(error);
@@ -50,9 +52,10 @@ const SignIn: React.FC = () => {
         }
 
         // mostrar toast
+        addToast();
       }
     },
-    [signIn],
+    [signIn, addToast],
   );
 
   return (
