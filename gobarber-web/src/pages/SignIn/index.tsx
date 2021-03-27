@@ -27,7 +27,7 @@ const SignIn: React.FC = () => {
 
   const history = useHistory();
 
-  const {user, signIn} = useAuth();
+  const {signIn} = useAuth();
   const {addToast} = useToast();
 
   const handleSubmit = useCallback(
@@ -62,7 +62,7 @@ const SignIn: React.FC = () => {
         });
       }
     },
-    [signIn, addToast],
+    [signIn, addToast, history],
   );
 
   return (
