@@ -19,6 +19,7 @@
     "react-native-reanimated": "^2.0.1",
     "react-native-safe-area-context": "^3.2.0",
     "react-native-screens": "^2.18.1",
+    "react-native-vector-icons": "^8.1.0",
     "styled-components": "^5.2.1"
   },
   "devDependencies": {
@@ -26,6 +27,7 @@
     "@babel/runtime": "^7.12.5",
     "@types/react": "^17.0.3",
     "@types/react-native": "^0.64.2",
+    "@types/react-native-vector-icons": "^6.4.6",
     "@types/styled-components": "^5.1.9",
     "@types/styled-components-react-native": "^5.1.1",
     "@typescript-eslint/eslint-plugin": "^4.20.0",
