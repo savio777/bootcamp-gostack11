@@ -11,11 +11,11 @@
 		13B07FBC1A68108700A75B9A /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.m */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
+		4F431C9384C34BE18A44D360 /* RobotoSlab-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ECE64064796C489BB523FD60 /* RobotoSlab-Regular.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		928C0C45D49441CDBBB910B9 /* RobotoSlab-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6AA03DD3B0764DBEB4738DD0 /* RobotoSlab-Medium.ttf */; };
 		9E4780B22F94D5A4FF5BD459 /* libPods-gobarberApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 7369B25D49334DA561309807 /* libPods-gobarberApp.a */; };
 		C31215B4EB977A818ACCA72A /* libPods-gobarberApp-gobarberAppTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FF47442A904E9B15806F08E5 /* libPods-gobarberApp-gobarberAppTests.a */; };
-		928C0C45D49441CDBBB910B9 /* RobotoSlab-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6AA03DD3B0764DBEB4738DD0 /* RobotoSlab-Medium.ttf */; };
-		4F431C9384C34BE18A44D360 /* RobotoSlab-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ECE64064796C489BB523FD60 /* RobotoSlab-Regular.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,13 +41,13 @@
 		378AFB0DC23DA24A1F7AFE49 /* Pods-gobarberApp-gobarberAppTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gobarberApp-gobarberAppTests.debug.xcconfig"; path = "Target Support Files/Pods-gobarberApp-gobarberAppTests/Pods-gobarberApp-gobarberAppTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4B42106B542A8CCBB345202F /* Pods-gobarberApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gobarberApp.release.xcconfig"; path = "Target Support Files/Pods-gobarberApp/Pods-gobarberApp.release.xcconfig"; sourceTree = "<group>"; };
 		5504F67562645EA64DB9876F /* Pods-gobarberApp-gobarberAppTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gobarberApp-gobarberAppTests.release.xcconfig"; path = "Target Support Files/Pods-gobarberApp-gobarberAppTests/Pods-gobarberApp-gobarberAppTests.release.xcconfig"; sourceTree = "<group>"; };
+		6AA03DD3B0764DBEB4738DD0 /* RobotoSlab-Medium.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "RobotoSlab-Medium.ttf"; path = "../assets/fonts/RobotoSlab-Medium.ttf"; sourceTree = "<group>"; };
 		7369B25D49334DA561309807 /* libPods-gobarberApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-gobarberApp.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		76FE74C50F7A4ACE1CE95A8A /* Pods-gobarberApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-gobarberApp.debug.xcconfig"; path = "Target Support Files/Pods-gobarberApp/Pods-gobarberApp.debug.xcconfig"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = gobarberApp/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		ECE64064796C489BB523FD60 /* RobotoSlab-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "RobotoSlab-Regular.ttf"; path = "../assets/fonts/RobotoSlab-Regular.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		FF47442A904E9B15806F08E5 /* libPods-gobarberApp-gobarberAppTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-gobarberApp-gobarberAppTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		6AA03DD3B0764DBEB4738DD0 /* RobotoSlab-Medium.ttf */ = {isa = PBXFileReference; name = "RobotoSlab-Medium.ttf"; path = "../assets/fonts/RobotoSlab-Medium.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
-		ECE64064796C489BB523FD60 /* RobotoSlab-Regular.ttf */ = {isa = PBXFileReference; name = "RobotoSlab-Regular.ttf"; path = "../assets/fonts/RobotoSlab-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -150,19 +150,17 @@
 				378AFB0DC23DA24A1F7AFE49 /* Pods-gobarberApp-gobarberAppTests.debug.xcconfig */,
 				5504F67562645EA64DB9876F /* Pods-gobarberApp-gobarberAppTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
 		AF4A82BC0C2F4175BC926739 /* Resources */ = {
-			isa = "PBXGroup";
+			isa = PBXGroup;
 			children = (
 				6AA03DD3B0764DBEB4738DD0 /* RobotoSlab-Medium.ttf */,
 				ECE64064796C489BB523FD60 /* RobotoSlab-Regular.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
-			path = "";
 		};
 /* End PBXGroup section */
 
@@ -504,6 +502,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = gobarberApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -529,6 +528,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				INFOPLIST_FILE = gobarberApp/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -594,7 +594,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
 					"$(inherited)",
@@ -652,7 +652,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
 					"$(inherited)",
