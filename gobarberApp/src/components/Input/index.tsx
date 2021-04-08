@@ -3,12 +3,16 @@ import React, {
   useRef,
   useImperativeHandle,
   forwardRef,
+  useState,
+  useCallback,
 } from 'react';
 
 import { TextInputProps } from 'react-native';
+import Icon from 'react-native-vector-icons/Feather';
+
 import { useField } from '@unform/core';
 
-import { Container, TextInput, Icon } from './styles';
+import { Container, TextInput } from './styles';
 
 interface InputProps extends TextInputProps {
   name: string;
@@ -27,10 +31,23 @@ const Input: React.ForwardRefRenderFunction<InputRef, InputProps> = (
   { icon, name, ...rest },
   ref,
 ) => {
+  const [isFocused, setIsFocused] = useState(false);
+  const [isFilled, setIsFilled] = useState(false);
+
   const { registerField, defaultValue = '', fieldName, error } = useField(name);
 
   const inputValueRef = useRef<InputValueReference>({ value: defaultValue });
   const inputElementRef = useRef<any>(null);
+
+  const handleInputFocus = useCallback(() => {
+    setIsFocused(true);
+  }, []);
+
+  const handleInputBlur = useCallback(() => {
+    setIsFocused(false);
+
+    setIsFilled(!!inputValueRef.current.value);
+  }, []);
 
   // passar informação do componente filho para o componente pai
   useImperativeHandle(ref, () => ({
@@ -58,8 +75,14 @@ const Input: React.ForwardRefRenderFunction<InputRef, InputProps> = (
   }, [registerField, fieldName]);
 
   return (
-    <Container>
-      {icon && <Icon name={icon} size={20} color="#666360" />}
+    <Container isFocused={isFocused} isErrored={!!error}>
+      {icon && (
+        <Icon
+          name={icon}
+          size={20}
+          color={isFocused || isFilled ? '#ff9000' : '#666360'}
+        />
+      )}
 
       <TextInput
         ref={inputElementRef}
@@ -68,8 +91,12 @@ const Input: React.ForwardRefRenderFunction<InputRef, InputProps> = (
         onChangeText={value => {
           inputValueRef.current.value = value;
         }}
+        onBlur={handleInputBlur}
+        onFocus={handleInputFocus}
         {...rest}
       />
+
+      {error && <Icon name="alert-circle" size={20} color="#c53030" />}
     </Container>
   );
 };
