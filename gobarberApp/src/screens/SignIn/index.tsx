@@ -8,6 +8,7 @@ import {
   Platform,
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Feather';
+import { useNavigation } from '@react-navigation/native';
 
 import Input from '../../components/Input';
 import Button from '../../components/Button';
@@ -23,44 +24,48 @@ import {
 
 import logo from '../../assets/logo.png';
 
-const SignIn: React.FC = () => (
-  <>
-    <KeyboardAvoidingView
-      style={{ flex: 1 }}
-      enabled
-      behavior={Platform.OS === 'android' ? undefined : 'padding'}
-    >
-      <ScrollView
-        contentContainerStyle={{ flex: 1 }}
-        keyboardShouldPersistTaps="handled"
+const SignIn: React.FC = () => {
+  const navigation = useNavigation();
+
+  return (
+    <>
+      <KeyboardAvoidingView
+        style={{ flex: 1 }}
+        enabled
+        behavior={Platform.OS === 'android' ? undefined : 'padding'}
       >
-        <Container>
-          <Image
-            source={logo}
-            width={100}
-            height={50}
-            style={{ marginTop: -30 }}
-          />
+        <ScrollView
+          contentContainerStyle={{ flex: 1 }}
+          keyboardShouldPersistTaps="handled"
+        >
+          <Container>
+            <Image
+              source={logo}
+              width={100}
+              height={50}
+              style={{ marginTop: -30 }}
+            />
 
-          <View>
-            <Title>Faça seu login</Title>
-          </View>
-          <Input name="email" placeholder="Email" icon="mail" />
-          <Input name="password" placeholder="Senha" icon="lock" />
-          <Button onPress={() => {}}>Entrar</Button>
+            <View>
+              <Title>Faça seu login</Title>
+            </View>
+            <Input name="email" placeholder="Email" icon="mail" />
+            <Input name="password" placeholder="Senha" icon="lock" />
+            <Button onPress={() => {}}>Entrar</Button>
 
-          <ForgotPassword onPress={() => {}}>
-            <ForgotPasswordText>Esqueci minha senha</ForgotPasswordText>
-          </ForgotPassword>
-        </Container>
-      </ScrollView>
-    </KeyboardAvoidingView>
+            <ForgotPassword onPress={() => {}}>
+              <ForgotPasswordText>Esqueci minha senha</ForgotPasswordText>
+            </ForgotPassword>
+          </Container>
+        </ScrollView>
+      </KeyboardAvoidingView>
 
-    <CreateAccountButton onPress={() => {}}>
-      <Icon name="log-in" size={20} color="#ff9000" />
-      <CreateAccountText>Criar conta</CreateAccountText>
-    </CreateAccountButton>
-  </>
-);
+      <CreateAccountButton onPress={() => navigation.navigate('SignUp')}>
+        <Icon name="log-in" size={20} color="#ff9000" />
+        <CreateAccountText>Criar conta</CreateAccountText>
+      </CreateAccountButton>
+    </>
+  );
+};
 
 export default SignIn;
