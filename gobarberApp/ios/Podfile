@@ -12,6 +12,7 @@ target 'gobarberApp' do
     :hermes_enabled => false
   )
 
+
   target 'gobarberAppTests' do
     inherit! :complete
     # Pods for testing
