@@ -16,3 +16,7 @@ npx react-native init appgobarber --template react-native-template-typescript
 2. Delete node_modules and run yarn install
 3. Reset Metro's cache: yarn start --reset-cache
 4. Remove the cache: rm -rf /tmp/metro-\*
+
+## access backend in localhost
+
+`adb -s emulator-5554 reverse tcp:3333 tcp:3333`
