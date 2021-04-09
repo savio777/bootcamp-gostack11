@@ -20,3 +20,10 @@ npx react-native init appgobarber --template react-native-template-typescript
 ## access backend in localhost
 
 `adb -s emulator-5554 reverse tcp:3333 tcp:3333`
+
+## prints
+
+![Screenshot_1617946280](https://user-images.githubusercontent.com/35678887/114133066-d55f8980-98db-11eb-9609-6c6a33d7f973.png)
+
+![Screenshot_1617946287](https://user-images.githubusercontent.com/35678887/114133081-d85a7a00-98db-11eb-811d-ccc54ccfe70d.png)
+
