@@ -3,7 +3,7 @@ import { sign } from 'jsonwebtoken';
 import { compare } from 'bcrypt';
 
 import authConfig from '../../../configs/auth';
-import User from '../entities/User';
+import User from '../infra/typeorm/entities/User';
 import AppError from '../../../shared/errors/AppError';
 
 interface Request {
