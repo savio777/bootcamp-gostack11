@@ -6,7 +6,7 @@ import 'express-async-errors';
 
 import routes from './routes';
 import uploadConfig from '../../../configs/upload';
-import ensureAuthenticated from './middlewares/ensureAuthenticated';
+import ensureAuthenticated from '../../../modules/users/infra/http/middlewares/ensureAuthenticated';
 import AppError from '../../errors/AppError';
 
 import '../typeorm';
