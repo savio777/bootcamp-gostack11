@@ -6,5 +6,8 @@
 - [x] [Nível 01](https://github.com/savio777/bootcamp-gostack11/tree/nivel-01)
 - [x] [Nível 02](https://github.com/savio777/bootcamp-gostack11/tree/nivel-02)
 - [x] [Nível 03](https://github.com/savio777/bootcamp-gostack11/tree/nivel-03)
+- [ ] Nível 04
+- [ ] Nível 05
+- [ ] Nível 06
 
 [Futuro repositório que guardará todos os desafios📂](https://github.com/savio777/desafios-gostack11)
