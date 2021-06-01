@@ -30,6 +30,12 @@ class AppointmentsRepository implements IAppointmentsRepository {
 
     return appointment;
   }
+
+  public async find(): Promise<Appointment[]> {
+    const appointments = this.ormRepository.find();
+
+    return appointments;
+  }
 }
 
 export default AppointmentsRepository;
