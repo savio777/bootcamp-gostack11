@@ -10,6 +10,7 @@ import ensureAuthenticated from '../../../modules/users/infra/http/middlewares/e
 import AppError from '../../errors/AppError';
 
 import '../typeorm';
+import '../../container';
 
 const app = express();
 
