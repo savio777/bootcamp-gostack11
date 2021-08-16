@@ -1,5 +1,6 @@
 import { sign } from 'jsonwebtoken';
 import { compare } from 'bcrypt';
+import { inject, injectable } from 'tsyringe';
 
 import authConfig from '../../../configs/auth';
 import AppError from '../../../shared/errors/AppError';
@@ -8,8 +9,12 @@ import IUsersRepository from '../repositories/IUsersRepository';
 import IAuthenticateUserDTO from '../dtos/IAuthenticateUserDTO';
 import IAuthenticateUserResponseDTO from '../dtos/IAuthenticateUserResponseDTO';
 
+@injectable()
 class AuthenticateUserService {
-  constructor(private usersRepository: IUsersRepository) {}
+  constructor(
+    @inject('UsersRepository')
+    private usersRepository: IUsersRepository,
+  ) {}
 
   public async execute({
     email,
