@@ -5,7 +5,7 @@ import { parseISO } from 'date-fns';
 import CreateAppointmentService from '../../../services/CreateAppointmentService';
 
 class AppointmentsController {
-  public async create(req: Request, res: Response) {
+  public async create(req: Request, res: Response): Promise<Response> {
     const { provider_id, date } = req.body;
 
     const createAppointmentService = container.resolve(
