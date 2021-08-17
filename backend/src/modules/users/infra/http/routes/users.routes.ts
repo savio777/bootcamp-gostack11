@@ -1,46 +1,23 @@
 import { Router } from 'express';
-import { container } from 'tsyringe';
 import multer from 'multer';
+
 import uploadConfig from '../../../../../configs/upload';
-
-import CreateUserservice from '../../../services/CreateUserService';
-import UpdateUserAvatarService from '../../../services/UpdateUserAvatarService';
-
+import UsersControllers from '../controllers/UsersControllers';
 import ensureAuthenticated from '../middlewares/ensureAuthenticated';
 
 const usersRouter = Router();
+const usersControllers = new UsersControllers();
 
 const upload = multer(uploadConfig);
 
-usersRouter.post('/', async (req, res) => {
-  const { name, email, password } = req.body;
-
-  const createUserservice = container.resolve(CreateUserservice);
-
-  const user = await createUserservice.execute({ name, email, password });
-
-  return res.json(user);
-});
+usersRouter.post('/', usersControllers.create);
 
 // patch é usado geralmente para modificar uma informação da entidade em especifico
 usersRouter.patch(
   '/avatar',
   ensureAuthenticated,
   upload.single('avatar'),
-  async (req, res) => {
-    const { user, file } = req;
-
-    const updateUserAvatarService = container.resolve(UpdateUserAvatarService);
-
-    const userUploaded = await updateUserAvatarService.execute({
-      user_id: user.id,
-      avatarFileName: file.filename,
-    });
-
-    delete userUploaded.password;
-
-    return res.json(userUploaded);
-  },
+  usersControllers.updateAvatar,
 );
 
 export default usersRouter;

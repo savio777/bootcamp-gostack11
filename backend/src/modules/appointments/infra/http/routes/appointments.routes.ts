@@ -1,7 +1,7 @@
 import { Router } from 'express';
 
 import AppointmentsRepository from '../../typeorm/repositories/AppointmentsRepository';
-import AppointmentsController from '../controller/AppointmentsController';
+import AppointmentsController from '../controllers/AppointmentsController';
 
 import ensureAuthenticated from '../../../../users/infra/http/middlewares/ensureAuthenticated';
 
